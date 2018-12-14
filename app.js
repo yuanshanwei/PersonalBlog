@@ -17,15 +17,19 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(express.static('./views'))
 // 虚拟目录
 app.use('/node_modules', express.static('./node_modules')) 
-//注：访问不能有出现./"
+//注：http访问不能有出现./"
 
 // 设置 默认采用的模板引擎名称
 app.set('view engine', 'ejs')
 // 设置模板页面的存放路径  
 app.set('views', './views') 
 
+<<<<<<< HEAD
 //注：访问不能有出现./
 //   进去首页
+=======
+//注：http访问不能有出现./"
+>>>>>>> e0b23cd99d6d56cf4d280ad15e37f2af02d98c60
 app.get("/",(req,res) =>{
     res.render("index.ejs")  //这个地方可以点写index.ejs或者index 会自动获取
 })
@@ -64,6 +68,8 @@ app.post('/login', (req, res) => {
       res.send({ status: 200, msg: '登录成功!' })
     })
   })
+
+
 
 
 
