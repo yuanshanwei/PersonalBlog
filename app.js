@@ -97,6 +97,13 @@ app.post('/login', (req, res) => {
     })
   })
 
+  //添加一个文章的列表
+  app.get("/article/add",(req,res) => {
+    res.render('./article/add.ejs', {  
+        userInfo: req.session.userInfo, //在页面当中获取session的值
+        isLogin: req.session.isLogin    //在页面当中获取session的值 
+    })
+  })
 
 
 app.listen(3000,function(){
